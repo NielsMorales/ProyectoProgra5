@@ -1,0 +1,392 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterAseguradora.master.cs" Inherits="AseguradoraSiglo21.MasterPages.MasterAseguradora" %>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <title>Seguros El Equipo del Siglo XXI</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style>
+    
+    /* Inicia Estilos para menu superior */
+
+    /* Elimina los bordes redondeados y de margen inferior predeterminados de la barra de navegación */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #191970;
+    }
+    
+    
+    /* Establezca la altura de la cuadrícula para que .sidenav pueda ser del 100% */
+    .row.content {height: 450px}
+    
+    /* Establecer color de fondo y 100% de altura */
+    .sidenav {
+
+      padding-top: 20px;
+
+      background-color: #f1f1f1;
+
+      height: 100%;
+
+    }
+    
+    /* Establecer color de fondo negro, texto blanco y algo de relleno */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* En pantallas pequeñas, establezca la altura en 'auto' para sidenav y grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+    /* Finaliza Estilos para menu superior */
+
+
+    /* Inicia Estilos para menu lateral */
+   
+    .glyphicon { 
+        
+        margin-right:10px; 
+
+    }
+    .panel-body {
+        
+        padding:0px; 
+
+    }
+    .panel-body table tr td { 
+        
+        padding-left: 15px 
+
+    }
+    .panel-body .table {
+        
+        margin-bottom: 0px; 
+
+    }
+
+    /* Finaliza Estilos para menu lateral */
+
+
+  </style>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <%--Inicia contenedor de menú superior--%>
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+
+      <img src="../Imagenes/traje1.JPG" width="40" height="40" style="float:left; margin-top:4px; margin-right: 4px" />
+
+      <a class="navbar-brand" href="#" style="color:white"> Seguros El Equipo del Siglo XXI</a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <%--Aquí se puede agregar opciones la menu principal--%>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" style="color:white"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesión</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+     <%--Finaliza contenedor de menú superior--%>
+
+     <%--Inicia contenedor de menú lateral--%>
+
+   
+
+    <div class="row">
+        <div class="col-sm-3 col-md-3">
+            <div class="panel-group" id="accordion">
+
+               <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+
+                            <a href="../FormulariosEmpresa/frmPaginaInicio.aspx"><span class="glyphicon glyphicon-home">
+
+                            </span>Página Principal</a>
+
+                        </h4>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
+                            </span>Coberturas de póliza</a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-dashboard text-primary"></span><a href="../FormulariosEmpresa/frmCoberturaPolizaConsulta.aspx">Consultar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-primary"></span><a href="../FormulariosEmpresa/frmCoberturaPolizaAgregar.aspx">Agregar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-edit text-primary"></span><a href="../FormulariosEmpresa/frmCoberturaPolizaModificar.aspx">Modificar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-erase text-primary"></span><a href="../FormulariosEmpresa/frmCoberturaPolizaEliminar.aspx">Eliminar</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-folder-close">
+                            </span>Adicciones</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-dashboard text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesConsultar.aspx">Consultar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesAgregar.aspx">Agregar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-edit text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesModificar.aspx">Modificar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-erase text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesEliminar.aspx">Eliminar</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
+                            </span>Clientes</a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-dashboard text-primary"></span><a href="../FormulariosEmpresa/frmClienteConsulta.aspx">Consultar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-primary"></span><a href="../FormulariosEmpresa/frmClienteAgregar.aspx">Agregar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-edit text-primary"></span><a href="../FormulariosEmpresa/frmClienteModificar.aspx">Modificar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-erase text-primary"></span><a href="../FormulariosEmpresa/frmClienteEliminar.aspx">Eliminar</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-user">
+                            </span>Adicciones por cliente</a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-dashboard text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesClienteConsultar.aspx">Consultar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesClienteAgregar.aspx">Agregar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-edit text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesClienteModificar.aspx">Modificar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-erase text-primary"></span><a href="../FormulariosEmpresa/frmAdiccionesClienteEliminar.aspx">Eliminar</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-folder-close">
+                            </span>Registro de pólizas</a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-dashboard text-primary"></span><a href="../FormulariosEmpresa/frmRegistroPolizaConsultar.aspx">Consultar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-primary"></span><a href="../FormulariosEmpresa/frmRegistroPolizaAgregar.aspx">Agregar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-edit text-primary"></span><a href="../FormulariosEmpresa/frmRegistroPolizaModificar.aspx">Modificar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-erase text-primary"></span><a href="../FormulariosEmpresa/frmRegistroPolizaEliminar.aspx">Eliminar</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"><span class="glyphicon glyphicon-file">
+                            </span>Reportes</a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="#"> Adicciones por cliente</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="#"> Pólizas por cliente</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <%--Finaliza contenedor de menú lateral--%>
+
+        <div class="col-sm-9 col-md-9">
+
+            <div class="well" style="height:790px">
+
+                <%--Aquí se va a incluir los formularios--%>
+
+                <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+    </div>
+
+ <footer class="container-fluid text-center">
+
+  Todos los derechos reservados <%: DateTime.Now.Year %>
+
+</footer>
+ 
+</body>
+</html>
